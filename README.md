@@ -1,6 +1,6 @@
 # File-Format-Converter
 
-Overview
+**Overview**
 
 
 The objective of this project is to develop solutions based on the design provided. In this case, the source data was obtained in the form of CSV files from a MySQL DB.
@@ -9,48 +9,38 @@ To improve the efficiency of our data engineering pipelines, we need to convert 
 
 
 
-Data Model Details
+**Data Model Details**
+
+![image](https://github.com/user-attachments/assets/42e4edbd-b4f4-405c-9beb-6b46388e9370)
+
+
+**Design**
+
+![image](https://github.com/user-attachments/assets/da3d8ec1-9e89-4223-95ec-4cb0dfe59bb7)
+
+
+**Setup Instructions**
+1. Setup the Project Using VSCode
+
+2. Make sure you have set up a virtual environment (creating venv, requirements.txt, etc.,) and installed dependencies for the project.
+
+3. It is essential that you deploy the application with the core logic.
+
+4. Run the project after setting all the environment variables.
+
+5. Take appropriate steps to handle the exception
 
 
 
-Design
+**Validation Steps**
+1. You should check whether the data in the files has been converted properly.
 
-Setup Instructions
-Setup the Project Using VSCode
+2. Make sure the target folder has been created and populated with JSON files and confirm that the schema structure was accurately reflected from the CSV file. (Hint: Refer to schemas.json)
 
-Make sure you have set up a virtual environment (creating venv, requirements.txt, etc.,) and installed dependencies for the project.
-
-It is essential that you deploy the application with the core logic.
-
-Run the project after setting all the environment variables.
-
-Take appropriate steps to handle the exception
+3. Take the count of records in the CSV files and compare it to the number of records in the JSON files.
 
 
+**Technologies Used**
+1. Programming Language – Python
 
-Validation Steps
-You should check whether the data in the files has been converted properly.
-
-Make sure the target folder has been created and populated with JSON files and confirm that the schema structure was accurately reflected from the CSV file. (Hint: Refer to schemas.json)
-
-Take the count of records in the CSV files and compare it to the number of records in the JSON files.
-
-import pandas as pd
-# ###### Read orders JSON File using PANDAS
-orders_data_json= pd.read_json(
-    'data/retail_db/orders_json/part-00000',
-    lines=True
-)
-# To find count of rows
-orders_data_json.count()
-# ###### Read order_items JSON File using PANDAS
-order_items_data_json= pd.read_json(
-    'data/retail_db/order_items_json/part-00000',
-    lines=True
-)
-# To find count of rows
-order_items_data_json.count()
-Technologies Used
-Programming Language – Python
-
-Pandas – For Converting CSV to Dataframe and then Dataframe into JSON.
+2. Pandas – For Converting CSV to Dataframe and then Dataframe into JSON.
