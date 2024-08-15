@@ -6,8 +6,11 @@
 '''
 import pandas as pd
 import glob
+import json
 
 def file_converter():
+    # load schemas for csv files headers
+    schemas = json.load()
     
     # list all CSV files in data directory
     files = glob.glob('data/retail_db/*/part-*')
